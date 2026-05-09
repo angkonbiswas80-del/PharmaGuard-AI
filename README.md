@@ -21,8 +21,8 @@
 
 ### 📊 Dashboard Visuals
 |Dashbord Overview|| Live Trends | Data Log History |
-|---|---|
-![dashboard](dashboard_Newview1.png)[dashboard](dashboard_Newview2.png) | ![Logs](Datalogs_view.png) |
+|---|---|---|
+![Dashboard](dashboard_Newview1.png)[Dashboard](dashboard_Newview2.png) | ![Logs](Datalogs_view.png) |
 
 ---
 

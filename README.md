@@ -22,7 +22,7 @@
 ### 📊 Dashboard Visuals
 |Dashbord Overview|| Live Trends | Data Log History |
 |---|---|---|
-![Dashboard](dashboard_Newview1.png)[Dashboard](dashboard_Newview2.png) | ![Logs](Datalogs_view.png) |
+![Dashboard](dashboard_Newview1.png) ![Tends](dashboard_Newview2.png) | ![Logs](Datalogs_view.png) |
 
 ---
 

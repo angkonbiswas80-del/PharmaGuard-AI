@@ -1,23 +1,42 @@
-# 💊 PharmaGuard AI: IoT-Powered Cold Chain & Security Tracker
+# 💊 PharmaGuard AI: IoT-Powered Cold Chain Monitor
 
-## 🚀 [Live Dashboard Demo](https://pharmaguard-ai-njdn.onrender.com)
-*(Note: The live link might take 30-40 seconds to load if it's been inactive.)*
+**Real-time Pharmaceutical Cold Chain Monitoring with AI-Powered Insights**
 
-**PharmaGuard AI** is a real-time IoT solution designed for monitoring the pharmaceutical cold chain.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Dashboard-brightgreen)](https://pharmaguard-ai-njdn.onrender.com)
+
+---
+
+## 🚀 Overview
+
+**PharmaGuard AI** is an intelligent IoT-based solution designed for real-time monitoring of pharmaceutical cold chain shipments and storage. It tracks critical environmental parameters and provides actionable AI-driven insights to ensure medicine quality and regulatory compliance.
+
+---
+
+## ✨ Key Features
+
+- **Real-time Monitoring**: Temperature, Humidity, Lid Status & Shock/G-force
+- **AI-Powered Predictions**: Machine Learning model predicts traffic conditions and potential risks
+- **Intelligent AI Agent**: Provides contextual advice based on current conditions
+- **Live Dashboard**: Beautiful, responsive Streamlit dashboard with trend visualization
+- **Tamper Detection**: Real-time lid open/close monitoring
+- **Data Logging**: Complete activity history with Firebase integration
+- **Alert System**: Automatic warnings when parameters go beyond safe thresholds (2°C - 8°C)
 
 ---
 
 ## 📸 Project Showcase
 
-### 1. Real-time Metrics & Temperature Trend
-![PharmaGuard Dashboard Preview 1](dashboard_view1.png)  
-*(Current Temperature, Humidity, and Trend Line Chart)*
+### Live Dashboard
+![PharmaGuard Live Dashboard](dashboard_view1.png)
 
-### 2. Full Dashboard View
-![PharmaGuard Dashboard Preview 2](dashboard_view2.png)  
+### Trends & Analytics
+![Temperature & Humidity Trends](dashboard_Newview2.png)
 
-### 3. ML Prediction — Live Terminal Output
-![ML Terminal Output](pharmaguard_ml_terminal.png)
+### Activity Logs
+![Recent Activity Logs](Datalogs_view.png)
+
+### Terminal Output with AI Insights
+![ML Terminal with AI Agent](pharmaguard_ml_terminal.png)
 
 ### 📊 Dashboard Visuals
 |Dashboard Overview|| Live Trends | Data Log History |
@@ -26,15 +45,35 @@
 
 ---
 
-## 🌟 Key Features
-* **Live Dashboard:** Interactive visualization of temperature, humidity, and physical security.
-* **Tamper Detection:** Real-time monitoring of "Lid Status".
-* **Impact Sensing:** Shock force (G-force) monitoring.
-* **Intelligent Alerts:** Automated warnings when conditions breach safety limits (2°C - 8°C).
+## 🛠️ Tech Stack
 
-## ⚙️ Technical Setup
-1. **Installation:**
-   ```bash
-   python -m pip install -r requirements.txt
-2.   ​Execution: - Start monitor: python main.py
-​Launch dashboard: python -m streamlit run dashboard.py
+- **Backend**: Python
+- **IoT Simulation**: Custom sensor data simulation
+- **Machine Learning**: Scikit-learn (Linear Regression + Classification)
+- **Dashboard**: Streamlit
+- **Database**: Firebase (Firestore)
+- **Visualization**: Plotly
+- **Deployment**: Render
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/angkonbiswas80-del/PharmaGuard-AI.git
+cd PharmaGuard-AI
+
+# 2. Create virtual environment (Recommended)
+python -m venv venv
+venv\Scripts\activate    # Windows
+# source venv/bin/activate  # Linux/Mac
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the monitor
+python main.py
+
+# 5. Run the dashboard (in new terminal)
+streamlit run dashboard.py

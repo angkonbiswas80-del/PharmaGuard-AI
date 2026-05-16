@@ -43,7 +43,29 @@
 |---|---|---|
 ![Dashboard](dashboard_Newview1.png) ![Tends](dashboard_Newview2.png) | ![Logs](Datalogs_view.png) |
 
----
+### 🚦 Real-Time Traffic & Smart Alert Optimization
+PharmaGuard uses the TomTom Traffic API to adaptively optimize transit safety based on live Dhaka traffic conditions.
+
+| Traffic State | System Logs & AI Agent Recommendations |
+|---|---|
+| **Smooth** | <img src="traffic_smooth_log.png"> |
+| **Moderate Jam** | <img src="traffic_moderate_log.png"> |
+| **Heavy Traffic** | <img src="traffic_heavy_log.png"> |
+
+### 📧 Automated Notification System
+When the system encounters critical routing gridlocks (`Heavy Traffic`) or unauthorized access (`Lid: OPEN`), it immediately dispatches dynamic HTML alerts to stakeholders.
+
+<p align="center">
+  <img src="mobile_notification_alert.png" alt="Mobile Notification Alert"/>
+</p>
+
+### 📧 Automated Notification System
+PharmaGuard instantly dispatches professional HTML alerts when critical operational exceptions occur (e.g., severe gridlocks or unauthorized container access).
+
+| Alert Type | Mobile Push Notification (Gmail) | System Telemetry Logs |
+|---|---|---|
+| **Security Breach (`Lid: OPEN`)** | <img src="lid_open_mobile_alert.jpg"> | <img src="lid_open_terminal_log.png"> |
+
 
 ## 🛠️ Tech Stack
 

@@ -87,13 +87,13 @@ Inside the inbox, a fully rendered, responsive HTML report is delivered. It embe
 ## 🛠️ Tech Stack
 
 - **Backend**: Python
-- **IoT Simulation**: Custom sensor data simulation
+- **TomTomLiveTrafficAPI**
 - **Machine Learning**: Scikit-learn (Linear Regression + Classification)
 - **Dashboard**: Streamlit
 - **Database**: Firebase (Firestore)
 - **Visualization**: Plotly
 - **Deployment**: Render
-
+- GorqLlama-3Bio-Shield-Agent
 ---
 
 ## ⚙️ Installation & Setup

@@ -66,6 +66,23 @@ PharmaGuard instantly dispatches professional HTML alerts when critical operatio
 |---|---|---|
 | **Security Breach (`Lid: OPEN`)** | <img src="lid_open_mobile_alert.jpg"> | <img src="lid_open_terminal_log.png"> |
 
+### 🚨 Automated Intelligence & Bio-Shield Notification System
+
+PharmaGuard instantly dispatches professional, context-aware HTML alerts when critical operational anomalies occur (e.g., severe transit gridlocks or unauthorized container exposure). 
+
+Aligned with **Controlant** industry protocols, the system evaluates secondary risk multipliers—combining atmospheric exposure with thermal kinetics to predict immediate pathogen threats.
+
+#### 1. Edge Telemetry Log (Terminal)
+The terminal captures the exact live timestamp when the container lid is compromised (`Lid: OPEN`), records the current temperature, and invokes the **Groq Llama-3** agent to output an immediate bio-safety directive.
+![Edge Telemetry Log](YOUR_TERMINAL_LOG_IMAGE_PATH.png)
+
+#### 2. Mobile Push Notification (Gmail)
+The system fires an automated SMTP alert directly to stakeholders. If the temperature exceeds the safe threshold during exposure, it dynamically updates the subject line to a high-priority bio-hazard classification.
+![Mobile Push Alert](YOUR_MOBILE_NOTIF_IMAGE_PATH.jpeg)
+
+#### 3. Deep Bio-Hazard Inbox Report (HTML Payload)
+Inside the inbox, a fully rendered, responsive HTML report is delivered. It embeds the dynamic microbial risk evaluation, real-time telemetry metrics, and explicit Llama-3 optimization directives for quarantine procedures.
+![Full Email Payload](YOUR_EMAIL_BODY_IMAGE_PATH.png)
 
 ## 🛠️ Tech Stack
 

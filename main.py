@@ -88,10 +88,11 @@ def predict_next_temp():
     return round(float(prediction), 2)
 
 def get_ai_advice(temp, hum, lid, traffic):
-    """Fetches real-time smart logistics advice from Llama-3."""
+    """Fetches real-time smart logistics advice from Llama-3 with strict pathogen compliance."""
     try:
         prompt = (f"Temp: {temp}C, Humidity: {hum}%, Lid: {lid}, Traffic Conditions: {traffic}. "
-                  f"Give a strict 1-sentence smart logistics/safety advice for pharmaceutical transport.")
+                  f"Provide 1-sentence pharmaceutical logistics advice. If Lid is OPEN, explicitly "
+                  f"warn about bacterial contamination/pathogen risks based on transport safety standards.")
         
         completion = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
@@ -104,7 +105,6 @@ def get_ai_advice(temp, hum, lid, traffic):
 
 def get_real_traffic(lat, lon):
     """Evaluates route traffic density using TomTom Flow Segment API."""
-    # Set to "HEAVY" or "MODERATE" manually to simulate conditions for screenshots
     screenshot_mode = "REALTIME"  
     
     if screenshot_mode == "HEAVY":
@@ -135,8 +135,9 @@ def get_real_traffic(lat, lon):
 # --- 4. LIVE MONITORING LOOP ---
 print("🚀 PharmaGuard AI: Telemetry Matrix Online & Cloud Integration Stable...")
 
-# Anti-spam flag for loop iterations
+# Anti-spam flags for loop iterations
 heavy_traffic_alert_sent = False
+bacterial_alert_sent = False
 
 try:
     while True:
@@ -170,11 +171,36 @@ try:
         elif traffic != "Heavy Traffic":
             heavy_traffic_alert_sent = False 
 
-        # Trigger 2: Container Security Breach
+        # Trigger 2 & 3: Container Breach & Bacterial Contamination Risk Analysis (Thesis Integrated)
         if lid == "OPEN":
-            email_subject = "🚨 CONTAINER BREACH: Cold-Chain Integrity Compromised!"
-            email_body = f"PharmaGuard has detected an unauthorized <b>Lid Opening Event</b> at [{timestamp}].<br><br><b>Current Temperature:</b> {temp}°C.<br><b>Humidity Status:</b> {humidity}%.<br>Please take prompt action to secure the container."
-            send_email_alert(email_subject, email_body)
+            # Dynamic risk classification based on safety threshold
+            if temp > 5.5:
+                risk_title = "☣️ CRITICAL BIO-HAZARD"
+                border_color = "#d9534f"  # Red
+                contamination_status = f"<b>HIGH RISK!</b> Capsule temperature ({temp}°C) is in the danger zone while exposed. Rapid microbial multiplication and pathogen contamination are actively in progress."
+            else:
+                risk_title = "⚠️ WARNING: PATHOGEN VULNERABILITY DETECTED"
+                border_color = "#f0ad4e"  # Orange
+                contamination_status = f"<b>MODERATE RISK.</b> Temperature is currently stable at {temp}°C, but atmospheric exposure introduces an immediate risk of air-borne bacterial contamination."
+
+            if not bacterial_alert_sent:
+                email_subject = f"{risk_title}: Cold-Chain Integrity Compromised!"
+                email_body = f"""
+                <div style="border-left: 4px solid {border_color}; padding-left: 15px; background-color: #fffcf8; padding: 15px; border-radius: 4px;">
+                    <h3 style="color: {border_color}; margin-top: 0;">⚡ PharmaGuard AI Bio-Shield Security Matrix</h3>
+                    An unauthorized <b>Lid Opening Event</b> has been captured at [{timestamp}].<br><br>
+                    • <b>Current Temperature:</b> {temp}°C<br>
+                    • <b>Humidity Status:</b> {humidity}%<br>
+                    • <b>Microbial Risk Evaluation:</b> {contamination_status}<br><br>
+                    • <b>Llama-3 Edge Optimizer Directive:</b> "{advice}"<br><br>
+                    <b>Mandatory Protocol:</b> Secure and re-seal the container immediately. If exposure persists, quarantine the entire pharmaceutical batch for a biochemical assay validation.
+                </div>
+                """
+                send_email_alert(email_subject, email_body)
+                bacterial_alert_sent = True
+                
+        elif lid == "CLOSED":
+            bacterial_alert_sent = False
 
         # Sync payload with Firebase Cloud Database
         ref.push({

@@ -190,7 +190,7 @@ try:
                     <h3 style="color: {border_color}; margin-top: 0;">⚡ PharmaGuard AI Bio-Shield Security Matrix</h3>
                     An unauthorized <b>Lid Opening Event</b> has been captured at [{timestamp}].<br><br>
                     • <b>Current Temperature:</b> {temp}°C<br>
-                    • <b>Humidity Status:</b> {humidity}%<br>
+                    • <b>Humidity Status:</b> {humidity}%<br> 
                     • <b>Microbial Risk Evaluation:</b> {contamination_status}<br><br>
                     • <b>Llama-3 Edge Optimizer Directive:</b> "{advice}"<br><br>
                     <b>Mandatory Protocol:</b> Secure and re-seal the container immediately. If exposure persists, quarantine the entire pharmaceutical batch for a biochemical assay validation.

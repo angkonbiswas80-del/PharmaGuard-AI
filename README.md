@@ -84,6 +84,19 @@ The system fires an automated SMTP alert directly to stakeholders. If the temper
 Inside the inbox, a fully rendered, responsive HTML report is delivered. It embeds the dynamic microbial risk evaluation, real-time telemetry metrics, and explicit Llama-3 optimization directives for quarantine procedures.
 ![Full Email Payload](YOUR_EMAIL_BODY_IMAGE_PATH.png)
 
+## 🏗️ System Architecture
+
+Below is the comprehensive integrated ecosystem architecture of **PharmaGuard AI**. It outlines the end-to-end data flow from the simulated edge IoT node, through cloud synchronization with Firebase, up to the intelligence layer combining predictive Machine Learning and Groq Llama-3 Bio-Shield decisions:
+
+![PharmaGuard AI System Architecture](system_architecture.png)
+
+### 🔄 Core Data Pipeline Flow:
+1. **Edge Layer:** Custom Python script simulates 4-factor environmental metrics (Temperature, Humidity, Lid Exposure, Shock Force) alongside real-time TomTom Live Traffic API integration.
+2. **Predictive Analytics:** Implements a rolling Scikit-Learn Linear Regression model directly at the edge to forecast temperature trends 30 seconds into the future.
+3. **Cloud Synchronization:** Telemetry data payloads are securely pushed in real-time to a Firebase Realtime Database instance.
+4. **Bio-Shield & Notification Layer:** When anomalies occur (e.g., `Lid: OPEN`), the Groq Llama-3 Cognitive Agent evaluates the dynamic microbial risk index and automatically fires responsive HTML compliance alerts via SMTP.
+5. **Analytics Dashboard:** A Streamlit web interface (deployed on Render) fetches and visualizes active data streams, trends, and AI directives.
+
 ## 🛠️ Tech Stack
 
 - **Backend**: Python
